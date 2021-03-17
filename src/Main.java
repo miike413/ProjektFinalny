@@ -37,6 +37,13 @@ public class Main {
             }
         }
 
+        {
+            //lista rzeczy
+            int y;
+            Scanner myObj = new Scanner(System.in);
+            System.out.print("Po ile produktow przyszedles");
+            y = myObj.nextInt();
+        }
 
         do
             {
@@ -72,7 +79,8 @@ public class Main {
                 if (numberOfItemsInBasket == 5) fullBasket = true;
                 System.out.println("Twój koszyk:");
                 for (int i = 0; i < numberOfItemsInBasket; i++) System.out.println("[" + i + "] = " + basket[i]);
-            }catch (InputMismatchException inputMismatchException)
+            }
+            catch (InputMismatchException inputMismatchException)
             {
                 System.out.println("zły typ danych");
                 scanner.next();
