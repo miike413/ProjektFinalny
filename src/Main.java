@@ -1,3 +1,6 @@
+
+
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
@@ -8,14 +11,14 @@ public class Main {
         // Sklep gdzie musimy zrobić zakupy. Trzeba wybrac 5 produktów by wyjść ze sklepu. Jak weźmiemy produkt to ma on zniknąć z pocji
         String[] klasa = {"Złodziej", "Obywatel"};
         // produkty w sklepie
-        String[] shop = {"Bananas", "Orange", "Bread", "Yogurt", "CornFlakes", "Chicken"};
+        String[] shop = {"Banany", "Pomarańcze", "Chleb", "Jogurt", "Płatki", "Kurczak"};
         // koszyk o pojemności 5
         String[] basket = new String[5];
 
         Scanner scanner = new Scanner(System.in);
 //test
 
-   //test
+        //test
 
         int x = 0;
         boolean fullBasket = false;
@@ -23,18 +26,17 @@ public class Main {
         //klasa postaci
 
         {
-        try {
-            System.out.println("Przed wejsciem do sklepu wybierz swoją postać od 0 - 1 : ");
-            for (int i = 0; i < klasa.length; i++) {
-                System.out.println("[" + i + "] = " + klasa[i]);
+            try {
+                System.out.println("Przed wejsciem do sklepu wybierz swoją klasę od 0 - 1 : ");
+                for (int i = 0; i < klasa.length; i++) {
+                    System.out.println("[" + i + "] = " + klasa[i]);
+                }
+                int yourklasa = scanner.nextInt();
+                {System.out.println("Wybrałes postać:"+ yourklasa);}
             }
-            int yourklasa = scanner.nextInt();
-            {System.out.println("Wybrałes postać:"+ yourklasa);}
-        }
-        catch(InputMismatchException inputMismatchException)
+            catch(InputMismatchException inputMismatchException)
             {
                 System.out.println("zły typ danych");
-
             }
         }
 
@@ -47,9 +49,9 @@ public class Main {
         }
 
         do
-            {
+        {
             try {
-                System.out.println("\n Wybierz produkt ze sklepu : ");
+                System.out.println("\n Wybierz jeden produkt z półki : ");
                 for (int i = 0; i < shop.length; i++)
                 {
                     System.out.println("[" + i + "] = " + shop[i]);
@@ -67,15 +69,15 @@ public class Main {
                         numberOfItemsInBasket++;
                     }
                     else
-                        {
+                    {
                         System.out.println("Nie ma takiego produktu");
-                        }
+                    }
 
                 }
                 else
-                    {
+                {
                     System.out.println("Nie ma takiej opcji w sklepie");
-                    }
+                }
 
                 if (numberOfItemsInBasket == 1) fullBasket = true;
                 System.out.println("Twój koszyk:");
@@ -98,7 +100,7 @@ public class Main {
                 System.out.println("Masz dwie opcje: zapłacić lub uciec: ");
                 System.out.println("1. Uciec" +"\n" + "2. Zapłaćic" );
                 int wybor = scanner.nextInt();
-                System.out.println("Wybrałes" + wybor);
+                System.out.println("Wybrałes -> " + wybor);
                 {
                     if (!"1".equals(wybor));
                     System.out.println("Wybrałeś opcje by uciec z sklepu, co ty na to że rzucimy monetą o to czy udało Ci się uciec");
@@ -107,24 +109,24 @@ public class Main {
                     Random rand = new Random();
                     int n = rand.nextInt(3);
                     // pokazuje jaka liczbe wylosowal ale nie pokazemy mu tego  // System.out.println(n += 1);
-                    
+
+
+
+
+
                     {
                         if (moneta == n)
-                        System.out.println("Uciekles bezpiecznie z sklepu");
+                            System.out.println("Uciekles bezpiecznie ze sklepu.");
 
                         else
-                            System.out.println("Zostałeś złapany");
+                            System.out.println("Zostałeś złapany!" +"\n" + "Trafiasz do aresztu.1");
                     }
 
                 }
             }
 
-
-            System.out.println("wychodzisz z sklepu");
         }
-        //while and case can we use here?
 
-        //  dodac tu trzeba wyszedles ze sklepu
-        }
+    }
 
 }
