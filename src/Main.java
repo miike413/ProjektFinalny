@@ -210,8 +210,17 @@ public class Main
 
                                                 }
                                             } else {
+                                                if (dane.cenazazakupy< dane.pieniadze)
+                                                {
+                                                    System.out.println("Zapłaciłeś za zakupy i wychodzisz ze sklepu.");
+                                                    produkty.przerwynik();
+                                                    dane.pobieradan=false;
+                                                }
+                                                if (dane.cenazazakupy> dane.pieniadze)
+                                                {
+                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić");
 
-                                                System.out.println("Płacisz");
+                                                }
                                             }
                                             dane.pobieradan = false;
                                             programIsRunning = false;
@@ -233,7 +242,7 @@ public class Main
 
                     } while (dane.pobieradan);
 
-                    System.out.println("Wyszedłeś ze sklepu");
+                    System.out.println("Wyszedłeś ze sklepu z produktami(zajebałeś 100% working esy cheat insec on lee sin fast)");
                     break;
 
                 }
@@ -381,8 +390,17 @@ public class Main
 
 
                                             if (dane.sd.equals("tak")) {
-                                                System.out.println("Sprzedawca: Zapraszam do kasy.");
-                                                System.out.println("Podchodzisz do kasy i płacisz.");
+                                                if (dane.cenazazakupy< dane.pieniadze)
+                                                {
+                                                    System.out.println("Zapłaciłeś za zakupy i wychodzisz ze sklepu.");
+                                                    produkty.przerwynik();
+                                                    dane.pobieradan=false;
+                                                }
+                                                if (dane.cenazazakupy> dane.pieniadze)
+                                                {
+                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić");
+
+                                                }
 
                                                 dane.pobieradan = false;
                                                 programIsRunning = false;

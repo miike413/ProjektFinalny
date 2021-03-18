@@ -148,6 +148,6 @@ public class produkty {
     }
 
     public void przerwynik() {
-        System.out.println("-----------------------------------------------------------");
+        System.out.println("------------------------------------------------------------");
     }
 }
