@@ -398,7 +398,7 @@ public class Main
                                                 }
                                                 if (dane.cenazazakupy> dane.pieniadze)
                                                 {
-                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić");
+                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić\n idziesz do kasyna Dawaj kasę skurwysynu zarobić pięniądze");
 
                                                 }
 
