@@ -3,11 +3,11 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.*;
 
-public class dane
+public class Main
 {
     public static void main(String[] args) {
         produkty produkty = new produkty();
-        dana dana = new dana();
+        dane dane = new dane();
         Scanner sc = new Scanner(System.in);
         boolean programIsRunning = true;
 
@@ -35,42 +35,42 @@ public class dane
                         try {
 
                             System.out.println("Witamy w LadyBird! Ile pieniędzy masz na zakupy?");
-                            dana.pieniadze = Math.abs(sc.nextDouble());
-                            System.out.println("Na zakupy możesz wydać " + dana.pieniadze + " zł");
-                            dana.run = false;
+                            dane.pieniadze = Math.abs(sc.nextDouble());
+                            System.out.println("Na zakupy możesz wydać " + dane.pieniadze + " zł");
+                            dane.run = false;
                         } catch (Exception exception) {
                             System.out.println("Błedne dane spróbuj ponownie");
                             sc.next();
                         }
-                    } while (dana.run);
+                    } while (dane.run);
 
                     do {
 
 
-                        while (dana.pobieradan) {
+                        while (dane.pobieradan) {
 
                             produkty.przerwynik();
                             produkty.menudzial();
 
-                            dana.opcja = sc.next();
+                            dane.opcja = sc.next();
                             produkty.przerwynik();
-                            dana.cenazazakupy = 0;
-                            switch (dana.opcja) {
+                            dane.cenazazakupy = 0;
+                            switch (dane.opcja) {
                                 case "0": {
                                     produkty.pokazaniepieczywo();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktpieczywo.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktpieczywo.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktpieczywo.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenypieczywo.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktpieczywo.get(dana.c) + " w cenie " + produkty.cenypieczywo.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktpieczywo.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenypieczywo.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktpieczywo.get(dane.c) + " w cenie " + produkty.cenypieczywo.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -80,18 +80,18 @@ public class dane
                                 case "1": {
                                     produkty.pokazaniewarzywny();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktwarzywny.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktwarzywny.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktwarzywny.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenywarzywny.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktwarzywny.get(dana.c) + " w cenie " + produkty.cenywarzywny.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktwarzywny.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenywarzywny.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktwarzywny.get(dane.c) + " w cenie " + produkty.cenywarzywny.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -101,18 +101,18 @@ public class dane
                                 case "2": {
                                     produkty.pokazaniemięsny();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktmięsny.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktmięsny.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktmięsny.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenymięsny.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktmięsny.get(dana.c) + " w cenie " + produkty.cenymięsny.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktmięsny.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenymięsny.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktmięsny.get(dane.c) + " w cenie " + produkty.cenymięsny.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -122,18 +122,18 @@ public class dane
                                 case "3": {
                                     produkty.pokazanienabiał();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktnabiał.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktnabiał.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktnabiał.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenynabiał.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktnabiał.get(dana.c) + " w cenie " + produkty.cenynabiał.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktnabiał.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenynabiał.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktnabiał.get(dane.c) + " w cenie " + produkty.cenynabiał.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -143,18 +143,18 @@ public class dane
                                 case "4": {
                                     produkty.pokazanienapoj();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktnapoj.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktnapoj.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktnapoj.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenynapoj.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktnapoj.get(dana.c) + " w cenie " + produkty.cenynapoj.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktnapoj.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenynapoj.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktnapoj.get(dane.c) + " w cenie " + produkty.cenynapoj.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -164,15 +164,15 @@ public class dane
                                 case "5": {
 
                                     for (int i = 0; i < cenywkoszyku.size(); i++) {
-                                        dana.cenazazakupy = dana.cenazazakupy + cenywkoszyku.get(i);
+                                        dane.cenazazakupy = dane.cenazazakupy + cenywkoszyku.get(i);
                                     }
                                     {
-                                        System.out.println("Cena za zakupy wynosi " + dana.cenazazakupy +"zł \nCzy chcesz przejść dalej? [tak][nie]");
+                                        System.out.println("Cena za zakupy wynosi " + dane.cenazazakupy +"zł \nCzy chcesz przejść dalej? [tak][nie]");
 
-                                        dana.sd = sc.next();
+                                        dane.sd = sc.next();
 
 
-                                        if (dana.sd.equals("tak")) {
+                                        if (dane.sd.equals("tak")) {
                                             System.out.println("Sprzedawca: Zapraszam do kasy");
                                             System.out.println("Masz dwie opcje: zapłacić lub uciec.");
                                             System.out.println("1. Uciec" + "\n" + "2. Zapłaćic");
@@ -199,7 +199,7 @@ public class dane
 
                                                 System.out.println("Płacisz");
                                             }
-                                            dana.pobieradan=false;
+                                            dane.pobieradan=false;
                                             programIsRunning=false;
 
                                             break;
@@ -213,7 +213,7 @@ public class dane
 
 
 
-                    } while (dana.pobieradan);
+                    } while (dane.pobieradan);
 
                     System.out.println("Wyszedłeś ze sklepu");
                     break;
@@ -224,42 +224,42 @@ public class dane
                         try {
 
                             System.out.println("Witamy w LadyBird! Ile pieniędzy masz na zakupy?");
-                            dana.pieniadze = Math.abs(sc.nextDouble());
-                            System.out.println("Na zakupy możesz wydać " + dana.pieniadze + " zł");
-                            dana.run = false;
+                            dane.pieniadze = Math.abs(sc.nextDouble());
+                            System.out.println("Na zakupy możesz wydać " + dane.pieniadze + " zł");
+                            dane.run = false;
                         } catch (Exception exception) {
                             System.out.println("Błedne dane spróbuj ponownie");
                             sc.next();
                         }
-                    } while (dana.run);
+                    } while (dane.run);
 
                     do {
 
 
-                        while (dana.pobieradan) {
+                        while (dane.pobieradan) {
 
                             produkty.przerwynik();
                             produkty.menudzial();
 
-                            dana.opcja = sc.next();
+                            dane.opcja = sc.next();
                             produkty.przerwynik();
-                            dana.cenazazakupy = 0;
-                            switch (dana.opcja) {
+                            dane.cenazazakupy = 0;
+                            switch (dane.opcja) {
                                 case "0": {
                                     produkty.pokazaniepieczywo();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktpieczywo.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktpieczywo.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktpieczywo.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenypieczywo.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktpieczywo.get(dana.c) + " w cenie " + produkty.cenypieczywo.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktpieczywo.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenypieczywo.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktpieczywo.get(dane.c) + " w cenie " + produkty.cenypieczywo.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -269,18 +269,18 @@ public class dane
                                 case "1": {
                                     produkty.pokazaniewarzywny();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktwarzywny.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktwarzywny.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktwarzywny.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenywarzywny.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktwarzywny.get(dana.c) + " w cenie " + produkty.cenywarzywny.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktwarzywny.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenywarzywny.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktwarzywny.get(dane.c) + " w cenie " + produkty.cenywarzywny.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -290,18 +290,18 @@ public class dane
                                 case "2": {
                                     produkty.pokazaniemięsny();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktmięsny.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktmięsny.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktmięsny.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenymięsny.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktmięsny.get(dana.c) + " w cenie " + produkty.cenymięsny.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktmięsny.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenymięsny.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktmięsny.get(dane.c) + " w cenie " + produkty.cenymięsny.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -311,18 +311,18 @@ public class dane
                                 case "3": {
                                     produkty.pokazanienabiał();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktnabiał.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktnabiał.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktnabiał.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenynabiał.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktnabiał.get(dana.c) + " w cenie " + produkty.cenynabiał.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktnabiał.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenynabiał.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktnabiał.get(dane.c) + " w cenie " + produkty.cenynabiał.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -332,18 +332,18 @@ public class dane
                                 case "4": {
                                     produkty.pokazanienapoj();
                                     System.out.println("Który produkt chcesz dodać?");
-                                    dana.c = sc.nextInt();
+                                    dane.c = sc.nextInt();
 
-                                    System.out.println("Ile " + produkty.produktnapoj.get(dana.c) + " chcesz dodać do koszyka?");
-                                    dana.x = sc.nextInt();
+                                    System.out.println("Ile " + produkty.produktnapoj.get(dane.c) + " chcesz dodać do koszyka?");
+                                    dane.x = sc.nextInt();
 
-                                    if (dana.x > 0) {
-                                        produktdodwkoszyku.add(produkty.produktnapoj.get(dana.c));
-                                        cenywkoszyku.add(produkty.cenynapoj.get(dana.c) * dana.x);
-                                        System.out.println("Dodałeś " + produkty.produktnapoj.get(dana.c) + " w cenie " + produkty.cenynapoj.get(dana.c) + " zł");
+                                    if (dane.x > 0) {
+                                        produktdodwkoszyku.add(produkty.produktnapoj.get(dane.c));
+                                        cenywkoszyku.add(produkty.cenynapoj.get(dane.c) * dane.x);
+                                        System.out.println("Dodałeś " + produkty.produktnapoj.get(dane.c) + " w cenie " + produkty.cenynapoj.get(dane.c) + " zł");
                                     }
 
-                                    if (dana.x == 0) {
+                                    if (dane.x == 0) {
                                         System.out.println("Nie możesz dodać 0 produktów do koszyka!");
                                     }
 
@@ -353,19 +353,19 @@ public class dane
                                 case "5": {
 
                                     for (int i = 0; i < cenywkoszyku.size(); i++) {
-                                        dana.cenazazakupy = dana.cenazazakupy + cenywkoszyku.get(i);
+                                        dane.cenazazakupy = dane.cenazazakupy + cenywkoszyku.get(i);
                                     }
                                     {
-                                        System.out.println("Cena za zakupy wynosi " + dana.cenazazakupy +" zł \nCzy chcesz przejść dalej? [tak][nie]");
+                                        System.out.println("Cena za zakupy wynosi " + dane.cenazazakupy +" zł \nCzy chcesz przejść dalej? [tak][nie]");
 
-                                        dana.sd = sc.next();
+                                        dane.sd = sc.next();
 
 
-                                        if (dana.sd.equals("tak")) {
+                                        if (dane.sd.equals("tak")) {
                                             System.out.println("Sprzedawca: Zapraszam do kasy.");
                                             System.out.println("Podchodzisz do kasy i płacisz.");
 
-                                            dana.pobieradan=false;
+                                            dane.pobieradan=false;
                                             programIsRunning=false;
 
                                             break;
@@ -379,7 +379,7 @@ public class dane
 
 
 
-                    } while (dana.pobieradan);
+                    } while (dane.pobieradan);
 
                     System.out.println("Wyszedłeś ze sklepu");
                     break;
