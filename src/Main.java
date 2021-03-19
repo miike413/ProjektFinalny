@@ -242,7 +242,7 @@ public class Main
 
                     } while (dane.pobieradan);
 
-                    System.out.println("Wyszedłeś ze sklepu z produktami(zajebałeś 100% working esy cheat insec on lee sin fast)");
+                    System.out.println("Jako że jesteś złodziejem to obstawiamy że odłozysz produkty (pewnie do spodni) i wychodzisz z sklepu");
                     break;
 
                 }
@@ -398,8 +398,8 @@ public class Main
                                                 }
                                                 if (dane.cenazazakupy> dane.pieniadze)
                                                 {
-                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić\n idziesz do kasyna Dawaj kasę skurwysynu zarobić pięniądze");
-
+                                                    System.out.println("Nie masz wystarczającej liczby pieniedzy żeby zapłacić\n.");
+                                                    System.out.println("Ze wstydu wychodzisz z sklepu, możesz wrócic.");
                                                 }
 
                                                 dane.pobieradan = false;
